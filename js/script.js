@@ -14,6 +14,9 @@
 			myZip = $(this).attr('ZIP_CODE');
 			countyName = $(this).attr('COUNTY');
 			myID = countyName + "_" + myZip;
+			if(document.getElementById(myID)){
+				document.getElementById(myID).classList.add("county");
+			}
 			myGap = parseFloat($(this).attr('GAP'));
 			mySales = $(this).attr('SALES');
 			myPrice = $(this).attr('PRICE');
