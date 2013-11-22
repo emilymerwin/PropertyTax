@@ -11,6 +11,7 @@
 	border: 1px #555555 solid;
 	vertical-align: text-top;
 	margin: 2px;
+	opacity: .8;
 }
 #legend .item {
 	padding: 5px;
@@ -25,6 +26,7 @@
 	position: absolute;
 }
 .county {
+	fill-opacity: .8;
 }
 .metainfo {
 	margin: 0;

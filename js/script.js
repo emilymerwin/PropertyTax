@@ -25,11 +25,11 @@
 			if(myGap === undefined || isNaN(myGap)){
 				$("#" + mapCounty).css({ 'fill':'#FFFFFF' });
 			} else if(myGap > 3){
-				$("#"+myID).css({ 'fill':'#C30206' });
+				$("#"+myID).css({ 'fill':'#CB372D' });
 			} else if(myGap < -3){
-				$("#"+myID).css({ 'fill':'#0055A3' });
+				$("#"+myID).css({ 'fill':'#463770' });
 			} else {//light blue: #A3C0DC
-				$("#"+myID).css({ 'fill':'#2D8221' });
+				$("#"+myID).css({ 'fill':'#F4C556' });
 			}
 			$("#"+myID).hover(function (){
 				$(this).css({ 'stroke-width': 3 });
