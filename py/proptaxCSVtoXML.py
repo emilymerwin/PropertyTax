@@ -1,25 +1,33 @@
 #! /usr/bin/env python
 import csv
+import decimal
 from xml.dom.minidom import Document
 
-data = csv.DictReader (open("zipcode.csv",'U'))
+data = csv.DictReader (open("../data/zips2012.csv",'U'))
 #Create the XML doc
 doc = Document()
 #create the base element
 docbase = doc.createElement("docbase")
 doc.appendChild(docbase)
 
+def gapFixer(n):
+    if "NA" == n:
+        return n
+    else:
+        dec = int(round(decimal.Decimal(n), 2)*100)
+        return str(dec)
+
 for row in data:
     #create the row element
 	ZIP = doc.createElement('ZIP')
 
 	ZIP.setAttribute('COUNTY', row['COUNTY'])
-	ZIP.setAttribute('ZIP_CODE', row['ZIP'])
-	ZIP.setAttribute('GAP', row['GAP'])
-	ZIP.setAttribute('PRICE', row['PRICE'])
-	ZIP.setAttribute('SALES', row['SALES'])
+	ZIP.setAttribute('ZIP_CODE', row['ZIP CODE'])
+	ZIP.setAttribute('GAP', gapFixer(row['GAP']))
+	ZIP.setAttribute('PRICE', row['MEDIAN SALE PRICE'])
+	ZIP.setAttribute('SALES', row['1ST QUARTER SALES'])
 	docbase.appendChild(ZIP)
 
-f = open('zips.xml', 'w')
+f = open('../data/zips.xml', 'w')
 doc.writexml(f, addindent=" ", newl="\n")
 f.close()
