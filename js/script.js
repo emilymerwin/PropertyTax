@@ -33,6 +33,8 @@
 				$("#"+myID).css({ 'fill':'#F4C556' });
 			}
 			$("#"+myID).hover(function (){
+				var tmp = $(this).detach();
+				$("svg").append(tmp);
 				$(this).css({ 'stroke-width': 3 });
 			},function(){
 				$(this).css({ 'stroke-width': 0.75 });
