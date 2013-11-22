@@ -1,0 +1,36 @@
+#legend {
+	position: relative;
+	display: block;
+	height: 120px
+}
+#legend span {
+	display: inline-block;
+	width: 15px;
+	height: 10px;
+	background-color: #FFF;
+	border: 1px #555555 solid;
+	vertical-align: text-top;
+	margin: 2px;
+}
+#legend .item {
+	padding: 5px;
+	margin: 10px 0 10px 0;
+	position: absolute;
+	top: 0px;
+	width: 30%;
+}
+#svgCounties {
+	width: 609px;
+	height: 637px;
+	position: absolute;
+}
+.metainfo {
+	margin: 0;
+	color: #777;
+	font-size: 12px;
+}
+h3.tip-title {
+	border-bottom: 1px solid #e1e1e1;
+	padding-top: 0;
+	margin-bottom: 5px;
+}
