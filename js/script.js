@@ -1,7 +1,5 @@
 (function() {
-	var myZip, mapCounty, countyName, mySales, myGap, myPrice;
-
-	$(document).ready(function(){
+	$('#map').load('assets/metrozips.svg', null, function(data) {
 		$.ajax({
 			type: "GET",
 			url: "data/zips.xml",
@@ -9,7 +7,10 @@
 			success: parseZIPS
 		});
 	});
+
 	function parseZIPS(xml){
+		var myZip, mapCounty, countyName, mySales, myGap, myPrice;
+
 		$(xml).find("ZIP").each(function(){
 			myZip = $(this).attr('ZIP_CODE');
 			countyName = $(this).attr('COUNTY');
