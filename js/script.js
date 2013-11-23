@@ -2,7 +2,7 @@
 	$('#map').load('assets/metrozips.svg', null, function(data) {
 		$.ajax({
 			type: "GET",
-			url: "data/zips.xml",
+			url: "data/zips2013.xml",
 			dataType: "xml",
 			success: parseZIPS
 		});
