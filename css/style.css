@@ -1,7 +1,22 @@
+body {
+	max-width: 970px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333333;
+	font-size: 14px;
+}
+body, div {
+	margin: 0;
+}
+#container h4 {
+	font-size: 18px;
+	line-height: 20px;
+	margin: 10px 0;
+}
 #legend {
 	position: relative;
 	display: block;
-	height: 120px
+	height: 120px;
+	font-size: 13px;
 }
 #legend span {
 	display: inline-block;
@@ -36,7 +51,11 @@
 h3.tip-title {
 	border-bottom: 1px solid #e1e1e1;
 	padding-top: 0;
-	margin-bottom: 5px;
+	margin: 0 0 5px 0;
+	color: #444444;
+}
+.qtip-content {
+	font-size: 13px;
 }
 .qtip-defaults {
 	pointer-events: none; /*this prevents triggering mouseout if tip gets in way of cursor*/
