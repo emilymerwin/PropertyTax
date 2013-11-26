@@ -7,6 +7,7 @@
 	- Price will be in string dollar format, but that's fine since we are only operating on the GAP field
 	- GAP might have % sign, if so change cell format to Number. Parser will convert it to whole number
 - proptaxCSVtoXML.py will generate an XML file from the CSV
+- Send the script-styled SVG to print - to get the new SVG, view the application online, download the page, copy the SVG section and paste it into a fresh file. Save as .svg
 
 ###ToDo
 - handle missing ZIPs
