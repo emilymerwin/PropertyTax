@@ -11,4 +11,3 @@
 
 ###ToDo
 - handle missing ZIPs
-- Use JSON instead of XML
