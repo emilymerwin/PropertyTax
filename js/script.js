@@ -15,9 +15,7 @@
 			myZip = $(this).attr('ZIP_CODE');
 			countyName = $(this).attr('COUNTY');
 			myID = countyName + "_" + myZip;
-			if(document.getElementById(myID)){ //there may be a few elements present in the data but not the SVG
-				document.getElementById(myID).classList.add("county");
-			}
+			$("#"+myID).attr("class", "county");
 			myGap = parseFloat($(this).attr('GAP'));
 			mySales = $(this).attr('SALES');
 			myPrice = $(this).attr('PRICE');
