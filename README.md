@@ -1,6 +1,6 @@
 #Property Tax Series
  - This is an annual series that compares property tax assessments with actual home sale prices, for the Atlanta metro counties. When we started the series assessments were coming in way above sale prices, but in response to our reporting a new law was passed that prevented recently sold properties from being assessed above the sale price, which helped bring assessments back in line with actual values. It appears that in 2012 home prices have gained enough ground that they are now beating assessments.
- - <a href="http://www.ajc.com/propertytax2012/" target="_blank">2012 version</a> <a href="http://www.myajc.com/propertytax2013/" target="_blank">2013 version</a>
+ - <a href="http://www.ajc.com/propertytax2012/" target="_blank">2012 version</a> | <a href="http://www.myajc.com/propertytax2013/" target="_blank">2013 version</a>
  
 ##Setup
 - Reporter should send XLS or CSV file with county, number of sales (1st quarter), gap value (difference between appraisals and sale prices) and median sale price
@@ -11,3 +11,6 @@
 
 ###ToDo
 - handle missing ZIPs
+- optimize for mobile
+- outlining in IE9/10
+- IE lt 9 fallbacks
