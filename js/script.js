@@ -39,24 +39,28 @@
 			});
 			if(!isNaN(myGap)){
 				$("#"+myID).qtip({
-					content: "<h3 class='tip-title'>"+countyName+" "+myZip+"</h3> Median gap: " + myGap + "%<br><span class='metainfo'>*</span>Median price: " + myPrice + "<br><span class='metainfo'>*</span>Sales: " + mySales,
-					show: { solo: true, delay: 0,when: { event: 'mouseover' } },
-					hide: { fixed: true, delay: 0, when:'mouseout'}, style: {'font-family':'Arial', width: { min:190, max: 250 }, tip: false },
-					position: {
-						adjust: {screen:true, x: 38, y: 40},
-						/*corner: {
-						target: 'mouse',
-						tooltip: 'bottomRight'
-						}*/
+					content: {
+						title: countyName+" "+myZip,
+						text: "Median gap: " + myGap + "%<br><span class='metainfo'>*</span>Median price: " + myPrice + "<br><span class='metainfo'>*</span>Sales: " + mySales
+					},
+					style: {
+						classes: 'qtip-light',
+						tip: {
+							corner: false
+						}
 					}
 				});//qtip
 			} else {
 				$("#"+myID).qtip({
-					content: "<h3 class='tip-title'>"+countyName+" "+myZip+"</h3> Data not available<br>",
-					show: { solo: true, delay: 0, when: { event: 'mouseover' } },
-					hide: { fixed: true, delay: 0, when: 'mouseout' }, style: { 'font-family':'Arial', width: { min:150, max: 250 }, tip: false },
-					position: {
-						adjust: { screen:true, x: 38, y: 40 },
+					content: {
+						title: countyName+" "+myZip,
+						text: " Data not available"
+					},
+					style: {
+						classes: 'qtip-light',
+						tip: {
+							corner: false
+						}
 					}
 				});//qtip
 			}

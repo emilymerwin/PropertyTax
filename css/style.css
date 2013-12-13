@@ -41,14 +41,14 @@ body, div {
 	color: #777;
 	font-size: 12px;
 }
-h3.tip-title {
-	border-bottom: 1px solid #e1e1e1;
-	margin: 0 0 5px 0;
-	color: #444444;
+.qtip-title {
+	font-size: 14px;
 }
 .qtip-content {
 	font-size: 13px;
+	line-height: normal;
 }
 .qtip-defaults {
-	pointer-events: none; /*this prevents triggering mouseout if tip gets in way of cursor*/
+	pointer-events: none; /*prevent triggering mouseout if tip gets in way of cursor*/
+	color: #444444;
 }
