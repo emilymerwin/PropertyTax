@@ -41,14 +41,23 @@ body, div {
 	color: #777;
 	font-size: 12px;
 }
-.qtip-title {
-	font-size: 14px;
-}
-.qtip-content {
-	font-size: 13px;
-	line-height: normal;
-}
-.qtip-defaults {
-	pointer-events: none; /*prevent triggering mouseout if tip gets in way of cursor*/
+#tooltip {
 	color: #444444;
+	position: absolute;
+	padding: 8px;
+	background-color: white;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border:1px solid #e1e1e1;
+	pointer-events: none; /*prevent triggering mouseout if tip gets in way of cursor*/
+	max-width: 300px;
+	z-index: 9999;
+	display: none;
+	line-height: 17px;
+}
+#tooltip h3.tip-title {
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #e1e1e1;
+	margin: 0 0 5px 0;
 }

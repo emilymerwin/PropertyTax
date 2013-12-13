@@ -8,6 +8,7 @@
 		});
 
 		function parseZIPS(json){
+			var tooltip = $("#tooltip");
 			json.forEach(function(ZIP){
 				var myID = ZIP.COUNTY + "_" + ZIP.ZIP_CODE,
 				me = $("#"+myID),
@@ -22,50 +23,38 @@
 				} else {//light blue: #A3C0DC
 					$("#"+myID).css({ 'fill':'#F4C556' });
 				}
-				$("#"+myID).hover(function (){
-					var tmp = $(this).detach();
-					$("svg").append(tmp);
+				$("#"+myID).hover(function (event){
+					var $county = $(this), tmp = $(this).detach();
+					$("svg").append(tmp); //move it to top level for stroke highlighting
 					$(this).css({ 'stroke-width': 3 });
-				},function(){
+					if(!$county.tip){
+						var tip = tipText();
+						$county.tip = tip; //store it so we don't have to parse all that again
+						$county.xPosition = event.pageX+20;
+						$county.yPosition = event.pageY-20;
+					}
+					placeTip($county.xPosition, $county.yPosition, $county.tip);
+				}, function(){
 					$(this).css({ 'stroke-width': 0.75 });
+					tooltip.css("display", "none");
 				});
 
-				if(!isNaN(myGap)){
-					$("#"+myID).qtip({
-						content: {
-							title: ZIP.COUNTY+" "+ZIP.ZIP_CODE,
-							text: "Median gap: " + myGap + "%<br><span class='metainfo'>*</span>Median price: " + ZIP.PRICE + "<br><span class='metainfo'>*</span>Sales: " + ZIP.SALES
-						},
-						style: {
-							classes: 'qtip-light',
-							tip: {
-								corner: false
-							}
-						}
-					});//qtip
-				} else {
-					$("#"+myID).qtip({
-						content: {
-							title: ZIP.COUNTY+" "+ZIP.ZIP_CODE,
-							text: " Data not available"
-						},
-						style: {
-							classes: 'qtip-light',
-							tip: {
-								corner: false
-							}
-						}
-					});//qtip
+				function tipText (){
+					if(!isNaN(myGap)){
+						return "<h3 class='tip-title'>"+ZIP.COUNTY+" "+ZIP.ZIP_CODE+"</h3>Median gap: " + ZIP.GAP + "%<br><span class='metainfo'>*</span>Median price: " + ZIP.PRICE + "<br><span class='metainfo'>*</span>Sales: " + ZIP.SALES;
+					} else {
+						return "<h3 class='tip-title'>"+ZIP.COUNTY+" "+ZIP.ZIP_CODE+"</h3>Data not available";
+					}
 				}
-			});
-		}
-	});
+			}); //json.forEach
 
-	function addCommas(x) {
-		//x = x*1000;
-		x = Math.round(x);
-		if(x){
-			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		}
-	}
+			function placeTip(x, y, html){
+				tooltip
+					.css("left", x+"px")
+					.css("top", y+"px")
+					.css("display", "block")
+					.html(html);
+			}
+		};//parseZIPs
+	});
 }());
