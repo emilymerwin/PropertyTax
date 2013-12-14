@@ -35,7 +35,7 @@
 					}
 					placeTip($county.xPosition, $county.yPosition, $county.tip);
 				}, function(){
-					$(this).css({ 'stroke-width': 0.75 });
+					$(this).css({ 'stroke-width': 1 });
 					tooltip.css("display", "none");
 				});
 
