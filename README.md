@@ -13,4 +13,3 @@
 - handle missing ZIPs
 - optimize for mobile
 - outlining in IE9/10
-- IE lt 9 fallbacks

@@ -7,6 +7,9 @@ body {
 body, div {
 	margin: 0;
 }
+#countiesPNG {
+	display: none;
+}
 #container h4 {
 	font-size: 18px;
 	line-height: 20px;
